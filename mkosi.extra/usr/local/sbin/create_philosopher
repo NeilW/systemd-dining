@@ -10,10 +10,7 @@ getent group philosophers > /dev/null || addgroup --firstgid 1500 philosophers
 adduser --disabled-password --shell /bin/bash --gecos "$2,,,,$3" "$1" 
 adduser "$1" philosophers
 mkdir -p /home/"$1"/.config/systemd/user/default.target.wants
-for word in select-seat.path select-seat.service mail-processor.path mail-processor.service
-do
-    ln -sf /usr/lib/systemd/user/${word} /home/"$1"/.config/systemd/user/default.target.wants
-done
+ln -sf /usr/lib/systemd/user/*.path /home/"$1"/.config/systemd/user/default.target.wants
 loginctl enable-linger "$1"
 if [ -z "$4" ]
 then

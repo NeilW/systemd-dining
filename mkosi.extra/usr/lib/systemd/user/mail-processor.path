@@ -4,6 +4,3 @@ Requires=mail-processor.service
 
 [Path]
 PathModified=/var/mail/%u
-
-[Install]
-WantedBy=default.target

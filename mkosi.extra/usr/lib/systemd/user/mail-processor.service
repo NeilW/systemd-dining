@@ -6,6 +6,3 @@ Type=oneshot
 ExecStart=/usr/local/bin/mail-processor
 StandardInput=file:/var/mail/%u
 SyslogFacility=local0
-
-[Install]
-WantedBy=default.target
