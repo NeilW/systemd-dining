@@ -3,19 +3,19 @@ set -e
 
 if [ "$#" -ne 2 ]
 then
-	echo "Usage: ${0##*/} username subject"
+	echo "Usage: ${0##*/} subject username"
 	exit 64
 fi
 
-case "$2" in
+case "$1" in
 Fork\ Request)
-    exec mail-task-fork-request "$1"
+    exec mail-task-fork-request "$2"
     ;;
 Fork\ Response)
-    exec mail-task-fork-response "$1"
+    exec mail-task-fork-response "$2"
     ;;
 *)
-    echo "Unknown mail request ${2} from ${1}"
+    echo "Unknown mail request ${1} from ${2}"
     echo "Discarding mail"
     exit 0
 esac
