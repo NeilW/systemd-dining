@@ -3,6 +3,5 @@ Description=Mail Processor for %u
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/mail-processor
-StandardInput=file:/var/mail/%u
+ExecStart=/usr/local/bin/mail-processor /var/mail/%u
 SyslogFacility=local0
