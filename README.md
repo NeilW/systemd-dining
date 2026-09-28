@@ -49,7 +49,7 @@ Once a philosopher reaches the hungry target, they check if they have
 both forks. If not they email the relevant dining neighbour(s) a "fork
 request" asking for the shared fork.
 
-A sendmail `.forward` file runs a mail processor for each email received.
+A systemd path unit runs a mail processor for each email received.
 
 For each fork request related to a sender
 - if we are thinking and we have the fork, we delete the fork and send a fork response back.

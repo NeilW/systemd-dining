@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch mail for %u
+Requires=mail-processor.service
+
+[Path]
+PathModified=/var/mail/%u
+
+[Install]
+WantedBy=default.target

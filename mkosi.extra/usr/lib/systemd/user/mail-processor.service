@@ -1,0 +1,10 @@
+[Unit]
+Description=Mail Processor for %u
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/mail-processor
+SyslogFacility=local0
+
+[Install]
+WantedBy=default.target
